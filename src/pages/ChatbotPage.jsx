@@ -1,8 +1,8 @@
+import Chatbot from "../components/Chatbot";
+import MessageInput from "../components/MessageInput";
 import { useChatMessages } from "../hooks/useChatMessages";
-import Chatbot from "./Chatbot";
-import MessageInput from "./MessageInput";
 
-export default function ChatbotComponent({
+export default function ChatbotPage({
   initialMessage = "Hey! How can I help you?",
   user_id,
   conversation_id,

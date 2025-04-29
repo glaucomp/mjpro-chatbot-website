@@ -1,9 +1,9 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import ChatbotPage from "./pages/ChatbotPage";
 import Services from "./pages/Services";
-
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import ChatbotComponent from "./components/ChatbotComponent";
 
 const queryClient = new QueryClient();
 
@@ -15,7 +15,7 @@ function App() {
         <Navbar />
 
         <section id="home" style={{ paddingTop: "80px" }}>
-          <ChatbotComponent
+          <ChatbotPage
             user_id="22"
             conversation_id="conv_1"
             agent_id="a1"
