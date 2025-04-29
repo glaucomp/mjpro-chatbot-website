@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "../assets/images/logo_top_menu.png";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -20,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <h1>MJPRO</h1>
+      <img src={logo} alt="MJPRO Logo" className="navbar-logo" />
       <button className="hamburger" onClick={toggleMenu}>
         ☰
       </button>
