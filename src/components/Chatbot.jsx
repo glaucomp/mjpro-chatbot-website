@@ -11,7 +11,8 @@ export default function Chatbot({ messages }) {
   return (
     <div className="chatbot-container">
       <div className="chatbot-scroll-area">
-        <div style={{ flexGrow: 1 }} />{" "}
+        <div className="chatbot-spacer" />
+
         {messages.map((msg, index) => (
           <div
             key={msg.id}
