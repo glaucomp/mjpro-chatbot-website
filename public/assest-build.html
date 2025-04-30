@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .input-outer-container {
+        max-width: 25rem;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        align-items: center;
+      }
+      .input-inner-container {
+        display: flex;
+        border-radius: 4rem;
+        border: 1px solid rgba(99, 99, 99, 0.6);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.3) -3.64%,
+          rgba(0, 0, 0, 0.3) 63.54%,
+          rgba(139, 69, 132, 0.3) 82.6%,
+          rgba(0, 0, 0, 0.3) 91.65%
+        );
+        box-shadow: 0px 1px 0px 1px rgba(255, 255, 255, 0.52) inset,
+          0px 5px 10px 0px rgba(191, 128, 247, 0.6) inset;
+        backdrop-filter: blur(2px);
+        width: 85%;
+        height: 3.1875rem;
+        padding: 0 5% 0 5%;
+        overflow: hidden;
+        transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+
+        & .light-left-container {
+          position: absolute;
+          left: -7px;
+          opacity: 0.5;
+          z-index: 0;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+
+        & .light-bottom-container {
+          position: absolute;
+          bottom: -4px;
+          left: 30%;
+          opacity: 0.4;
+          z-index: 0;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+
+        & .light-right-container {
+          position: absolute;
+          right: -7px;
+          top: 0px;
+          z-index: 0;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+      }
+
+      .input-outer-container.active .input-inner-container {
+        width: 100%;
+        border-radius: 4rem;
+        border: 1px solid rgba(212, 129, 254, 0.3);
+        background: linear-gradient(
+          180deg,
+          rgb(170 87 218 / 29%) -3.64%,
+          rgba(170, 87, 218, 0.2) 63.54%,
+          rgba(204, 101, 236, 0.2) 82.6%,
+          rgba(171, 7, 253, 0.04) 91.65%
+        );
+        box-shadow: 0px 1px 1px 1px #e1a5ff inset,
+          0px 5px 10px 0px rgba(204, 105, 254, 0.5) inset,
+          0px 10px 19px -6px rgba(204, 105, 254, 0.5);
+        backdrop-filter: blur(2px);
+
+        transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+
+        & .light-left-container {
+          opacity: 0.9;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+
+        & .light-bottom-container {
+          opacity: 0.5;
+          bottom: -12px;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+
+        & .light-right-container {
+          right: -3px;
+          top: -10px;
+          transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+        }
+      }
+
+      .input-flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        z-index: 1;
+        width: 95%;
+        transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+
+        & .leftcol {
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        & .rightcol {
+          border-left: 2px dotted rgba(255, 255, 255, 0.2);
+          padding-left: 1rem;
+        }
+      }
+
+      .leftcol textarea {
+        background: transparent;
+        color: white;
+        border-style: none;
+        width: 96%;
+        height: 1.2rem;
+        resize: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+
+        &::-webkit-scrollbar {
+          width: 0.8rem; /* Adjust width as needed */
+        }
+
+        &::-webkit-scrollbar-track {
+          background: linear-gradient(#000,#b96ce02c); /* Scrollbar track (background) */
+          border-radius: 6px; /* Optional: round the thumb */
+          border: 1px solid #b96ce046;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #924eb4; /* Scrollbar thumb (handle) */
+          border: 1px solid #b96ce0af;
+          border-radius: 6px; /* Optional: round the thumb */
+        }
+      }
+      .leftcol textarea::placeholder {
+        color: rgba(255, 255, 255, 0.75);
+        & ::after {
+          content: "hello";
+        }
+      }
+      .leftcol textarea:focus-visible {
+        outline: none;
+      }
+
+      .input-outer-container.active .input-flex-container {
+        width: 98%;
+        transition: all 300ms cubic-bezier(0.35, 0.7, 0.45, 1.2);
+      }
+
+      /** Button ***/
+      .button-border {
+        background-color: #000;
+        box-shadow: 0px 3px 2px 0px #000 inset,
+          0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 5px 0px #36184a;
+        border-radius: 5rem;
+        padding: 0.15rem;
+        filter: drop-shadow(0px 2px 5px rgba(125, 50, 167, 0.5));
+      }
+
+      .input-outer-container .button-border.send{
+        background: linear-gradient(#c22fd9, #000);
+        box-shadow: -1px 1px 1px -1px rgba(255, 74, 243, 0.61) inset,
+          -1px 2px 2px 0px #6303b2 inset,
+          0px 1.5px 1px -1px rgba(255, 255, 255, 0.5),
+          0px 2px 2px -1px rgba(154, 0, 230, 0.7),
+          0px 1px 10px 0px rgba(144, 17, 229, 0.6);
+
+        filter: drop-shadow(0px 2px 5px rgba(125, 50, 167, 0.5));
+      }
+
+      .btn-send-message {
+        width: 3.08006rem;
+        height: 2.0305rem;
+        border-radius: 5rem;
+        background: linear-gradient(136deg, #454545 10.03%, #000 94.47%);
+        border: 1px solid #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+          height: 0.9rem;
+        }
+      }
+
+      .btn-send-message.send {
+        width: 3.08006rem;
+        height: 2.0305rem;
+        border-radius: 5rem;
+        background: linear-gradient(136deg, #f1126f 10.03%, #2d26ff 94.47%);
+        border: 2px solid #000000;
+
+        & img {
+          filter: invert(1) brightness(1.5);
+          height: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+   
+      background-color: #000;
+    "
+  >
+    <div class="input-outer-container">
+      <div class="input-inner-container">
+        <div class="input-flex-container">
+          <div class="leftcol">
+            <textarea
+              id="message-input"
+              name="message-input"
+              
+            ></textarea>
+          </div>
+          <div class="rightcol">
+            <!--start button-->
+            <div class="button-border">
+              <button class="btn-send-message">
+                <img src="/src/assets/icons/icon-send-disabled.svg" />
+              </button>
+            </div>
+            <!--end button-->
+          </div>
+        </div>
+        <div class="light-left-container">
+          <img
+            src="/src/assets/icons/left-light.svg"
+            alt="Description of the image"
+          />
+        </div>
+        <div class="light-bottom-container">
+          <img
+            src="/src/assets/icons/bottom-light.svg"
+            alt="Description of the image"
+          />
+        </div>
+        <div class="light-right-container">
+          <img
+            src="/src/assets/icons/right-light.svg"
+            alt="Description of the image"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Handle clicks on document
+  document.addEventListener('click', function (e) {
+    const containers = document.querySelectorAll('.input-outer-container');
+    const buttons = document.querySelectorAll('.btn-send-message');
+
+    let clickedContainer = null;
+    for (const container of containers) {
+      if (container.contains(e.target)) {
+        clickedContainer = container;
+        break; // Stop after finding the first matching container
+      }
+    }
+
+    if (clickedContainer) {
+      // Add 'active' class to the specific container where the click occurred
+      clickedContainer.classList.add('active');
+    } else {
+      // Remove 'active' from all containers
+      for (const container of containers) {
+        container.classList.remove('active');
+      }
+
+      // Check each button and its corresponding textarea
+      for (const button of buttons) {
+        const container = button.closest('.input-outer-container');
+        if (!container) continue;
+
+        const textarea = container.querySelector('textarea');
+        if (textarea && textarea.value.trim() === '') {
+          button.classList.remove('send');
+        }
+      }
+    }
+  });
+
+  // Handle message input changes to toggle 'send' class on the button
+  const messageInput = document.getElementById('message-input');
+  if (messageInput) {
+    messageInput.addEventListener('input', function () {
+      const button = document.querySelector('.btn-send-message');
+      if (button && this.value.trim() !== '') {
+        button.classList.add('send');
+      } else {
+        button.classList.remove('send');
+      }
+    });
+  }
+});
+
+</script>
+</html>
+
+
