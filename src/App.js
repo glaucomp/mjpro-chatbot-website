@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
+import AnimatedCards from './pages/AnimatedCards';
 import ChatbotPage from "./pages/ChatbotPage";
 import Services from "./pages/Services";
 
@@ -22,7 +23,7 @@ function App() {
             admin_id="a2"
           />
         </section>
-
+        <section id="animated_cards">   <AnimatedCards /></section>
         <section id="services"><Services /></section>
         <section id="about"><About /></section>
 

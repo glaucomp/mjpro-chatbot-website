@@ -1,28 +1,66 @@
 import { useState } from "react";
 import "./MessageInput.css";
 
+import bottomLight from "../assets/icons/bottom-light.svg";
+import iconSendActive from "../assets/icons/icon-send-active.svg";
+import iconSendDisabled from "../assets/icons/icon-send-disabled.svg";
+import leftLight from "../assets/icons/left-light.svg";
+import rightLight from "../assets/icons/right-light.svg";
+
 export default function MessageInput({ onSend, isSending }) {
   const [input, setInput] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isSending) return;
 
-    onSend(input); // apenas envia o texto
+    onSend(input);
     setInput("");
   };
 
   return (
-    <form className="message-input-container" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Type your message here..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button type="submit" disabled={isSending}>
-        Send
-      </button>
+    <form
+      className={`input-outer-container ${isFocused ? "active" : ""}`}
+      onSubmit={handleSubmit}
+    >
+      <div className="input-inner-container">
+        <div className="input-flex-container">
+          <div className="leftcol">
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your message here..."
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+            />
+          </div>
+          <div className="rightcol">
+            <div className={`button-border ${input ? "send" : ""}`}>
+              <button
+                type="submit"
+                className={`btn-send-message ${input ? "send" : ""}`}
+                disabled={!input || isSending}
+              >
+                <img
+                  src={input ? iconSendActive : iconSendDisabled}
+                  alt="Send"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="light-left-container">
+          <img src={leftLight} alt="Left Light" />
+        </div>
+        <div className="light-bottom-container">
+          <img src={bottomLight} alt="Bottom Light" />
+        </div>
+        <div className="light-right-container">
+          <img src={rightLight} alt="Right Light" />
+        </div>
+      </div>
     </form>
   );
 }

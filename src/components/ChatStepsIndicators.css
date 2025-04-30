@@ -1,0 +1,17 @@
+.chat-steps-indicators {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 60px;
+  height: 4px;
+  background-color: #555;
+  border-radius: 2px;
+}
+
+.indicator.active {
+  background-color: #a29bfe;
+}

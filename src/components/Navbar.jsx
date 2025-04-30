@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/images/logo_top_menu.png";
+import logo from "../assets/icons/icon-mjlogo.svg";
 import "./Navbar.css";
 
 export default function Navbar() {
