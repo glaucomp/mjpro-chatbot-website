@@ -1,11 +1,11 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import Chatbot from "../components/Chatbot";
-import ChatStepsIndicators from "../components/ChatStepsIndicators";
-import ChatStepsText from "../components/ChatStepsText";
-import LottieCentered from "../components/LottieCentered";
-import MessageInput from "../components/MessageInput";
-import { useChatMessages } from "../hooks/useChatMessages";
-import { motion, AnimatePresence } from "framer-motion";
+import Chatbot from "../../components/Chatbot";
+import ChatStepsIndicators from "../../components/ChatStepsIndicators";
+import ChatStepsText from "../../components/ChatStepsText";
+import LottieCentered from "../../components/LottieCentered";
+import MessageInput from "../../components/MessageInput";
+import { useChatMessages } from "../../hooks/useChatMessages";
 
 const stepsTexts = [
   { title: "Let’s start a chat", subtitle: "What industry are you in?" },

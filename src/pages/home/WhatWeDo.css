@@ -1,0 +1,56 @@
+.what-we-do-section {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  opacity: 0.8;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+.service-number {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.service-name {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.explore-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.explore-button:hover {
+  transform: translateY(-5px);
+}

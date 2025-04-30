@@ -2,9 +2,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
-import AnimatedCards from './pages/AnimatedCards';
-import ChatbotPage from "./pages/ChatbotPage";
-import Services from "./pages/Services";
+import AnimatedCards from './pages/home/AnimatedCards';
+import ChatbotPage from './pages/home/ChatbotPage';
+import WhatWeDo from './pages/home/WhatWeDo';
 
 const queryClient = new QueryClient();
 
@@ -23,8 +23,8 @@ function App() {
             admin_id="a2"
           />
         </section>
-        <section id="animated_cards">   <AnimatedCards /></section>
-        <section id="services"><Services /></section>
+        <section id="animated_cards"> <AnimatedCards /></section>
+        <section id="services"><WhatWeDo /></section>
         <section id="about"><About /></section>
 
         <footer>© MJPRO 2025</footer>
