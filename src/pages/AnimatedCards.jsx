@@ -1,17 +1,37 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useLayoutEffect, useRef } from "react";
 import "./AnimatedCards.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimatedCards() {
   const containerRef = useRef(null);
+  const cardsRef = useRef([]);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      cardsRef.current.forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { x: i === 0 ? -350 : 350, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
 
-  const zDistance = useTransform(scrollYProgress, [0, 1], [-300, 0]); // Aproximação 3D
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+              scrub: true,
+            },
+          }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="animated-cards-section" ref={containerRef}>
@@ -19,37 +39,23 @@ export default function AnimatedCards() {
         Build your intelligence within Your data, your power.
       </h1>
       <div className="cards-container">
-        <motion.div
-          className="card"
-          style={{
-            opacity,
-            transform: "perspective(800px)",
-            z: zDistance, // Agora corrigido corretamente
-          }}
-        >
+        <div className="card" ref={(el) => (cardsRef.current[0] = el)}>
           <h2>Let’s Design A New App</h2>
           <p>
             Partner with us to bring your ideas to life, ensuring your vision is
             realized with expertly crafted design and innovative strategies.
           </p>
           <button className="card-btn">Get Started</button>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="card"
-          style={{
-            opacity,
-            transform: "perspective(800px)",
-            z: zDistance, // Agora corrigido corretamente
-          }}
-        >
+        <div className="card" ref={(el) => (cardsRef.current[1] = el)}>
           <h2>Give Your App An Upgrade</h2>
           <p>
             Join forces with us to uplift your app, enhancing its functionality,
             user experience through insightful, targeted upgrades.
           </p>
           <button className="card-btn">Take Me There</button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

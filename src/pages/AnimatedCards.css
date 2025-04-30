@@ -16,6 +16,7 @@ html {
   padding: 100px 20px;
   color: #fff;
   text-align: center;
+  perspective: 800px;
 }
 
 .animated-title {
@@ -36,7 +37,6 @@ html {
   padding: 30px;
   width: 300px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s;
 }
 
 .card h2 {
