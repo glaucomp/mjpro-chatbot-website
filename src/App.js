@@ -30,6 +30,7 @@ function App() {
         </section>
         <section id="animated_cards"> <AnimatedCards /></section>
         <section id="what_we_do"><WhatWeDo /></section>
+
         <section id="ContentSectionLeft">
           <ContentSection
             subtitle="YOUR APP IDEA, REALIZED."

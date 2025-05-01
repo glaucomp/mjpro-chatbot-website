@@ -28,65 +28,101 @@ html {
   display: flex;
   gap: 30px;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  backdrop-filter: blur(10px);
   padding: 30px;
   width: 300px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+  transition: transform 0.3s ease;
+  text-align: left;
+  position: relative;
+}
+
+.card-new-app {
+  background: linear-gradient(
+    140deg,
+    rgba(52, 54, 84, 0.9),
+    rgba(19, 18, 45, 0.9)
+  );
+}
+
+.card-upgrade {
+  background: linear-gradient(
+    140deg,
+    rgba(46, 28, 41, 0.9),
+    rgba(15, 15, 20, 0.9)
+  );
 }
 
 .card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-bottom: 18px;
 }
 
 .card p {
-  font-size: 1rem;
-  margin-bottom: 30px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
 }
 
 .card-btn {
   padding: 10px 20px;
   font-size: 1rem;
   color: #000;
-  background: #fff;
+  background-color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .card-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
-  .animated-cards-section {
-    padding: 60px 20px;
-    min-height: auto;
-  }
-
   .animated-title {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
   }
 
   .cards-container {
     flex-direction: column;
-    align-items: center;
     gap: 20px;
   }
 
   .card {
     width: 90%;
+    padding: 20px;
   }
 
   .card h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .card p {
@@ -94,7 +130,6 @@ html {
   }
 
   .card-btn {
-    padding: 8px 16px;
     font-size: 0.9rem;
   }
 }
