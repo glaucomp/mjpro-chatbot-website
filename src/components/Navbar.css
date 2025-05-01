@@ -38,7 +38,7 @@ nav .menu {
 
 nav .menu a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
@@ -57,7 +57,7 @@ nav .menu a:hover {
     right: -100%;
     width: 200px;
     height: calc(100vh - 60px);
-    background-color: #fff;
+    background-color: #1e1e1e;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     padding: 20px;

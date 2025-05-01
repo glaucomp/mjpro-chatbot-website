@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/icons/icon-mjlogo.svg";
 import "./Navbar.css";
 
@@ -6,7 +7,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
-
   const closeMenu = () => setOpen(false);
 
   useEffect(() => {
@@ -15,27 +15,31 @@ export default function Navbar() {
         setOpen(false);
       }
     };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <nav>
-      <img src={logo} alt="MJPRO Logo" className="navbar-logo" />
+      <Link to="/" className="navbar-logo-link">
+        <img src={logo} alt="MJPRO Logo" className="navbar-logo" />
+      </Link>
+
       <button className="hamburger" onClick={toggleMenu}>
         ☰
       </button>
 
       <div className={`menu ${open ? "open" : ""}`}>
-        <a href="#home" onClick={closeMenu}>
+        <Link to="/" onClick={closeMenu}>
           Home
-        </a>
-        <a href="#services" onClick={closeMenu}>
+        </Link>
+        <Link to="/services" onClick={closeMenu}>
           Services
-        </a>
-        <a href="#about" onClick={closeMenu}>
+        </Link>
+        <Link to="/about" onClick={closeMenu}>
           About
-        </a>
+        </Link>
       </div>
     </nav>
   );
