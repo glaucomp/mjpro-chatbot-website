@@ -37,8 +37,6 @@ export default function ChatbotPage({
   const stepIndex = Math.min(responses.length, stepsTexts.length - 1);
   const currentStep = stepsTexts[stepIndex];
 
-  console.log("Current step:", stepIndex);
-
   const handleSend = (text) => {
     sendMessage(text);
     setResponses((prev) => [...prev, text]);

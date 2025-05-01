@@ -63,3 +63,38 @@ html {
 .card-btn:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .animated-cards-section {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+
+  .animated-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .card-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,142 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  height: auto;
+  width: 100%;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  max-width: 50%;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.footer-logo .highlight {
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
+
+.footer-flags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-flags img {
+  width: 40px;
+}
+
+.footer-acknowledgment {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-contact {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.footer-contact span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social img {
+  width: 25px;
+  height: 25px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+  opacity: 0.7;
+}
+/* Responsividade Mobile Otimizada */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+
+  .footer-flags {
+    justify-content: center;
+  }
+
+  .footer-acknowledgment {
+    font-size: 0.75rem;
+    padding: 0 10px;
+  }
+
+  .footer-contact span {
+    font-size: 0.9rem;
+  }
+
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
