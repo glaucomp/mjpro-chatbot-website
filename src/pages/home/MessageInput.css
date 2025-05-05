@@ -160,6 +160,6 @@
 }
 
 .btn-send-message.send img {
-  filter: invert(1) brightness(1.5);
+  filter: invert(0) brightness(1.5);
   height: 1rem;
 }

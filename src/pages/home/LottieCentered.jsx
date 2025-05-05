@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import React from "react";
-import centerIcon from "../assets/icons/icon-mjlogo.svg";
-import animationData from "../assets/lottie/lottie-abstract.json";
+import centerIcon from "../../assets/icons/icon-mjlogo.svg";
+import animationData from "../../assets/lottie/lottie-abstract.json";
 import "./LottieCentered.css";
 
 export default function LottieCentered() {

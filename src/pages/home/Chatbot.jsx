@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import chatBg from "../assets/images/bg_helmet.png";
+import chatBg from "../../assets/images/bg_helmet.png";
 import "./Chatbot.css";
 
 export default function Chatbot({ messages }) {

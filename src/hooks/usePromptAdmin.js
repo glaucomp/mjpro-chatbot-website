@@ -10,7 +10,7 @@ const promptConversationAdmin = async ({ prompt, user_id, conversation_id, agent
   };
 
   const response = await axios.post(
-    'http://localhost:8000/api/prompt_conversation_admin/',
+    'https://api.mjproapps.com/api/prompt_conversation_admin/',
     { prompt, user_id, conversation_id, agent_id, admin_id },
     { headers }
   );

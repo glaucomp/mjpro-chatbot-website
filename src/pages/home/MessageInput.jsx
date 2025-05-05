@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./MessageInput.css";
 
-import bottomLight from "../assets/icons/bottom-light.svg";
-import iconSendActive from "../assets/icons/icon-send-active.svg";
-import iconSendDisabled from "../assets/icons/icon-send-disabled.svg";
-import leftLight from "../assets/icons/left-light.svg";
-import rightLight from "../assets/icons/right-light.svg";
+import bottomLight from "../../assets/icons/bottom-light.svg";
+import iconSendActive from "../../assets/icons/icon-send-active.svg";
+import iconSendDisabled from "../../assets/icons/icon-send-disabled.svg";
+import leftLight from "../../assets/icons/left-light.svg";
+import rightLight from "../../assets/icons/right-light.svg";
 
 export default function MessageInput({ onSend, isSending }) {
   const [input, setInput] = useState("");
