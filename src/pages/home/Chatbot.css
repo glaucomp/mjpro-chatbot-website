@@ -1,3 +1,5 @@
+.main-container {min-height: 55vh;}
+
 .chat-background {
   background-image: url(../../assets/images/bg_helmet.png);
   background-size: 40em;
@@ -87,6 +89,8 @@
   box-shadow: 0px 2px 3px -1px rgba(112, 105, 251, 0.1),
     0px 7px 8px 0px rgba(46, 44, 185, 0.37);
   backdrop-filter: blur(3px);
+
+  
 }
 
 .chatbot-message.right {
@@ -161,6 +165,23 @@
   }
 }
 
-@media only screen and (max-width:26.56em) { 
-	.chatbot-container  {outline: 1px solid green;}
+/*** Phone CSS ****/
+
+@media only screen and (max-width: 27rem) {
+  .chatbot-message {
+    min-width: 88%;
+  }
+
+  .chat-background {
+    background-position: center top;
+    background-size: 110vw;
+  }
+
+  .chatbot-container {
+    outline: 1px solid green;
+    width: 99%;
+    height: 27.25em;
+    margin: 0 auto;
+    mask-image: radial-gradient(circle at center, black 55%, transparent 80%);
+  }
 }

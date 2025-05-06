@@ -13,31 +13,27 @@ export default function Chatbot({ messages }) {
 
   return (
     <div className="chat-background">
-    <div
-      className="chatbot-container"
-    
-    >
-      <div className="chatbot-scroll-area" ref={scrollAreaRef}>
-        <div className="chatbot-spacer" />
-        {messages.map((msg, index) => (
-          <div
-            key={msg.id}
-            className={`chatbot-message ${
-              index === messages.length - 1
-                ? msg.sender === "user"
-                  ? "center-user"
-                  : "center-bot"
-                : msg.sender === "user"
-                ? "left"
-                : "right"
-            }`}
-          >
-            {msg.text}
-          </div>
-        ))}
-        <div ref={bottomRef}></div>
+      <div className="chatbot-container">
+        <div className="chatbot-scroll-area" ref={scrollAreaRef}>
+          <div className="chatbot-spacer" />
+          {messages.map((msg, index) => (
+            <div
+              key={msg.id}
+              className={`chatbot-message ${index === messages.length - 1
+                  ? msg.sender === "user"
+                    ? "center-user"
+                    : "center-bot"
+                  : msg.sender === "user"
+                    ? "left"
+                    : "right"
+                }`}
+            >
+              {msg.text}
+            </div>
+          ))}
+          <div ref={bottomRef}></div>
+        </div>
       </div>
-    </div>
     </div>
   );
 }
