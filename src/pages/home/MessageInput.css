@@ -115,6 +115,22 @@
   resize: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
+
+  
+  &::-webkit-scrollbar {
+    width: 0.8rem; /* Adjust width as needed */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(#000,#b96ce02c); /* Scrollbar track (background) */
+    border-radius: 6px; /* Optional: round the thumb */
+    border: 1px solid #b96ce046;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #924eb4; /* Scrollbar thumb (handle) */
+    border: 1px solid #b96ce0af;
+    border-radius: 6px; /* Optional: round the thumb */
+  }
 }
 
 .leftcol textarea:focus-visible {
@@ -163,3 +179,6 @@
   filter: invert(0) brightness(1.5);
   height: 1rem;
 }
+
+@media (max-width: 27rem) {
+.input-outer-container{    max-width: 22rem;}}
