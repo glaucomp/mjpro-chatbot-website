@@ -18,12 +18,15 @@ export default function MessageInput({ onSend, isSending }) {
   
     onSend(input);
     setInput("");
+
+      // Tell the parent window to scroll
+  window.parent.postMessage({ action: 'scrollToTop' }, '*');
   
     // 👇 New part to fix the scroll issue
     if (document.activeElement) {
       document.activeElement.blur(); // blur the active field
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+   
   };
   return (
     <form
