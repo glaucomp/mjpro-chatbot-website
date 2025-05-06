@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import chatBg from "../../assets/images/bg_helmet.png";
 import "./Chatbot.css";
 
 export default function Chatbot({ messages }) {
@@ -13,9 +12,10 @@ export default function Chatbot({ messages }) {
   }, [messages]);
 
   return (
+    <div className="chat-background">
     <div
       className="chatbot-container"
-      style={{ backgroundImage: `url(${chatBg})` }}
+    
     >
       <div className="chatbot-scroll-area" ref={scrollAreaRef}>
         <div className="chatbot-spacer" />
@@ -37,6 +37,7 @@ export default function Chatbot({ messages }) {
         ))}
         <div ref={bottomRef}></div>
       </div>
+    </div>
     </div>
   );
 }
