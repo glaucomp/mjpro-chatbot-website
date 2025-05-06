@@ -13,12 +13,18 @@ export default function MessageInput({ onSend, isSending }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (!input.trim() || isSending) return;
-
+  
     onSend(input);
     setInput("");
+  
+    // 👇 New part to fix the scroll issue
+    if (document.activeElement) {
+      document.activeElement.blur(); // blur the active field
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
   return (
     <form
       className={`input-outer-container ${isFocused ? "active" : ""}`}
