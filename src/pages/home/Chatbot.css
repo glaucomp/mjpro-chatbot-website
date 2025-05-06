@@ -179,7 +179,7 @@
 
   .chatbot-container {
     outline: 1px solid green;
-    width: 99%;
+    width: 85%;
     height: 60dvh;
     margin: 0 auto;
     mask-image: radial-gradient(circle at center, black 55%, transparent 80%);
