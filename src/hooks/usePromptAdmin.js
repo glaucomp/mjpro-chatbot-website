@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const FIXED_TOKEN = "4d4a50524f4432303232";
 
-const promptConversationAdmin = async ({ prompt, user_id, conversation_id, agent_id, admin_id }) => {
+const promptConversationAdmin = async ({ prompt, conversation_id }) => {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Token ${FIXED_TOKEN}`,

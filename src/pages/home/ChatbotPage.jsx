@@ -20,17 +20,11 @@ const stepsTexts = [
 
 export default function ChatbotPage({
   initialMessage = "Hey! How can I help you?",
-  user_id,
   conversation_id,
-  agent_id,
-  admin_id,
 }) {
   const { messages, sendMessage, isSending } = useChatMessages(
     initialMessage,
-    user_id,
-    conversation_id,
-    agent_id,
-    admin_id
+    conversation_id
   );
 
   const [responses, setResponses] = useState([]);
@@ -68,16 +62,17 @@ export default function ChatbotPage({
           </motion.div>
         )}
       </AnimatePresence>
-<div className="bottom-section-container">
-      <ChatStepsText
-        title={currentStep.title}
-        subtitle={currentStep.subtitle}
-      />
-      <MessageInput onSend={handleSend} isSending={isSending} />
-      <ChatStepsIndicators
-        stepCount={stepsTexts.length}
-        activeSteps={responses.length}
-      /></div>
+      <div className="bottom-section-container">
+        <ChatStepsText
+          title={currentStep.title}
+          subtitle={currentStep.subtitle}
+        />
+        <MessageInput onSend={handleSend} isSending={isSending} />
+        <ChatStepsIndicators
+          stepCount={stepsTexts.length}
+          activeSteps={responses.length}
+        />
+      </div>
     </div>
   );
 }

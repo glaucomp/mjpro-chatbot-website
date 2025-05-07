@@ -2,19 +2,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Páginas adicionais (pode criar mais depois)
 
+import { v4 as uuidv4 } from 'uuid';
 import "./App.css";
 import ChatbotPage from './pages/home/ChatbotPage';
 
 const queryClient = new QueryClient();
 
 function App() {
+  const uniqueConversationId = uuidv4();
   return (
     <QueryClientProvider client={queryClient}>
       <ChatbotPage
-        user_id="22"
-        conversation_id="conv_1"
-        agent_id="a1"
-        admin_id="a2"
+        conversation_id={uniqueConversationId}
       />
     </QueryClientProvider>
   );
