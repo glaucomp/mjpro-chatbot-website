@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { usePromptConversationAdmin } from "./usePromptAdmin";
 
-export function useChatMessages(initialMessage, user_id, conversation_id, agent_id, admin_id) {
+export function useChatMessages(initialMessage, conversation_id) {
   const [messages, setMessages] = useState([
     { id: Date.now(), text: initialMessage, sender: "bot" },
   ]);
@@ -13,7 +13,7 @@ export function useChatMessages(initialMessage, user_id, conversation_id, agent_
     setMessages(prev => [...prev, userMessage]);
 
     mutate(
-      { prompt: userPrompt, user_id, conversation_id, agent_id, admin_id },
+      { prompt: userPrompt, conversation_id },
       {
         onSuccess: (data) => {
           const botMessage = {
@@ -35,7 +35,7 @@ export function useChatMessages(initialMessage, user_id, conversation_id, agent_
         },
       }
     );
-  }, [mutate, user_id, conversation_id, agent_id, admin_id]);
+  }, [mutate, conversation_id]);
 
   return {
     messages,
