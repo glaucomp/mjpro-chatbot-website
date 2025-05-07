@@ -44,7 +44,7 @@ export default function ChatbotPage({
   };
 
   return (
-    <div>
+    <div className="main-container">
       <AnimatePresence mode="wait">
         {stepIndex === 0 ? (
           <motion.div
@@ -68,7 +68,7 @@ export default function ChatbotPage({
           </motion.div>
         )}
       </AnimatePresence>
-
+<div className="bottom-section-container">
       <ChatStepsText
         title={currentStep.title}
         subtitle={currentStep.subtitle}
@@ -77,7 +77,7 @@ export default function ChatbotPage({
       <ChatStepsIndicators
         stepCount={stepsTexts.length}
         activeSteps={responses.length}
-      />
+      /></div>
     </div>
   );
 }
