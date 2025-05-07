@@ -18,14 +18,8 @@ const stepsTexts = [
   },
 ];
 
-export default function ChatbotPage({
-  initialMessage = "Hey! How can I help you?",
-  conversation_id,
-}) {
-  const { messages, sendMessage, isSending } = useChatMessages(
-    initialMessage,
-    conversation_id
-  );
+export default function ChatbotPage({ conversation_id }) {
+  const { messages, sendMessage, isSending } = useChatMessages(conversation_id);
 
   const [responses, setResponses] = useState([]);
 

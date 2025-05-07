@@ -1,9 +1,8 @@
 import { useCallback, useState } from "react";
 import { usePromptConversationAdmin } from "./usePromptAdmin";
 
-export function useChatMessages(initialMessage, conversation_id) {
+export function useChatMessages(conversation_id) {
   const [messages, setMessages] = useState([
-    { id: Date.now(), text: initialMessage, sender: "bot" },
   ]);
   const [voiceMessage, setVoiceMessage] = useState('');
   const { mutate, isPending } = usePromptConversationAdmin();
