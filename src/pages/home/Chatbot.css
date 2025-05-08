@@ -178,7 +178,8 @@
   .chat-background {
     background-position: center top;
     background-size: 110vw;
-    height:30rem;
+    height:57dvh;
+    
   }
 
   .chatbot-container {
