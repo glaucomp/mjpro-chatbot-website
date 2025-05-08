@@ -22,8 +22,7 @@
   font-family: "Arimo", sans-serif;
   color: #a29bfe;
   font-size: clamp(1.2rem, 1.0993rem + 0.4295vw, 1.4rem);
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px;}
 
 
 .input-container {

@@ -47,7 +47,7 @@ return (
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message here..."
+            placeholder="Start Typing..."
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             onKeyDown={handleKeyDown} // ✅ Add this line
