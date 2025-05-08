@@ -11,12 +11,13 @@
 }
 
 .chat-title {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   margin-bottom: 5px;
 }
 
 .chat-subtitle {
   color: #a29bfe;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
