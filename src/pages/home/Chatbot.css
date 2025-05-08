@@ -178,6 +178,7 @@
   .chat-background {
     background-position: center top;
     background-size: 110vw;
+    height:30rem;
   }
 
   .chatbot-container {
@@ -185,6 +186,6 @@
     width: 85%;
     height: 60dvh;
     margin: 0 auto;
-    mask-image: radial-gradient(circle at center, black 55%, transparent 80%);
+    mask-image: radial-gradient(circle at center, black 50%, transparent 65%);
   }
 }

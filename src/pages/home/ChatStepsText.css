@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+
 .chat-steps-container {
   color: #ffffff;
   border-radius: 10px;
@@ -10,14 +13,18 @@
 }
 
 .chat-title {
-  font-size: 1.8rem;
+  font-family: "Arimo", sans-serif;
+  font-size: clamp(2.3rem, 2.0483rem + 1.0738vw, 2.8rem);
   margin-bottom: 5px;
 }
 
 .chat-subtitle {
+  font-family: "Arimo", sans-serif;
   color: #a29bfe;
+  font-size: clamp(1.2rem, 1.0993rem + 0.4295vw, 1.4rem);
   margin-bottom: 20px;
 }
+
 
 .input-container {
   display: flex;
@@ -51,4 +58,11 @@
 
 .chat-submit-button:hover {
   background-color: #433f65;
+}
+
+
+@media only screen and (max-width: 27rem) {
+
+
+
 }
