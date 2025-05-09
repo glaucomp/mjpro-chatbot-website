@@ -27,6 +27,13 @@
     <title>Chatbot MJPro</title>
   </head>
   <body>
+    <script>
+      // Send a signal to the parent window once the iframe has loaded
+      window.addEventListener('load', function () {
+        window.parent.postMessage({ type: 'iframeLoaded' }, 'https://mjproductions.app');
+        window.parent.postMessage({ type: 'iframeLoaded' }, 'https://mxj.ai');
+      });
+    </script>
     <noscript>Ask for a chatbot MJPro</noscript>
     <div id="root"></div>
     <!--
